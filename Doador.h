@@ -10,7 +10,6 @@ class Doador {
 private:
     string nome;
     string email;
-    string dataNascimento;
 
 public:
     void setNome(const string& nome) {
@@ -21,9 +20,6 @@ public:
         this->email = email;
     }
 
-    void setDataNascimento(const string& dataNascimento) {
-        this->dataNascimento = dataNascimento;
-    }
 
     string getNome() const {
         return nome;
@@ -33,9 +29,6 @@ public:
         return email;
     }
 
-    string getDataNascimento() const {
-        return dataNascimento;
-    }
-}
+};
 
 #endif

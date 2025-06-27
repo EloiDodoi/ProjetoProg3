@@ -1,5 +1,5 @@
 #ifndef MARCARACAO_H
-#define MARCARACAOL_H
+#define MARCARACAO_H
 
 #include <iostream>
 #include <string>

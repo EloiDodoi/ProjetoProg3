@@ -11,9 +11,9 @@ class Doacao
 {
 private:
     Racao RacaoDoada;
-    double QuantiadeKg
-    String DataDoacao
-
+    double QuantiadeKg;
+    String DataDoacao;
+    Doador QuemDoou;
 public:
     Doacao();
     ~Doacao();
@@ -26,8 +26,30 @@ public:
         RacaoDoada = racao;
     }
 
-    
-}
+    double getQuantidadeKg(){
+        return QuantidadeKg;
+    }
+
+    void setQuantidadeKg(){
+        QuantidadeKg = quantidade;
+    }
+
+    string getDataDoacao(){
+        return DataDoacao;
+    }
+
+    void setDataDoacao(){
+        DataDoacao = data;
+    }
+
+    Doador getQuemDoou(){
+        return QuemDoou;
+    }
+
+   Void setQuemDoou(){
+    QuemDoou = Doador;
+   }
+};
 
 
-#endif
+#endif 
