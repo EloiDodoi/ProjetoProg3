@@ -21,7 +21,6 @@ public:
     }
     ~PorteAnimal() {}
 
-    // Getters
     int getId() const {
         return IdPorte;
     }
