@@ -1,50 +1,16 @@
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef RELATORIO_H 
+#define RELATORIO_H
+#include <vector>
+#include "Doacao.h"
 
-#include "PorteAnimal.h"
-#include <iostream>
-#include <string>
+class Relatorio {
+private:
+    std::vector<Doacao> doacoes;
 
-using namespace std;
-
-class Animal
-{
-    private:
-    int IdAnimal;
-    string Raca;
-    string Especie;
-    PorteAnimal Porte;
-    public:
-        Animal();
-        ~Animal();
-
-        int getId(){
-            return IdAnimal;
-        }
-        void setId(int id){
-            IdAnimal = id;
-        }
-
-        string getRaca(){
-            return Raca;
-        }
-        void setRaca(string raca){
-            Raca = raca;
-        }
-
-        string getEspecie(){
-            return Especie;
-        }
-        void setEspecie(int){
-        }
-
-        PorteAnimal getPorte(){
-            return Porte;
-        }
-        void setPorteAnimal(PorteAnimal pa){
-            Porte = pa;
-        }
-
+public:
+    void adicionarDoacao(const Doacao& doacao);
+    void gerarRelatorioGeral() const;
+    void gerarRelatorioPorDoador(const std::string& email) const;
 };
 
 #endif

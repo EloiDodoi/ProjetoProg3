@@ -3,48 +3,49 @@
 
 #include <iostream>
 #include <string>
-#include<vector>
+#include <vector>
 
 using namespace std;
 
-class PorteAnimal{
+class PorteAnimal {
+private:
+    int IdPorte;
+    string Tipo;
 
-    private:
-        int IdPorte;
-        string Tipo;
+    static vector<PorteAnimal*> todosPortes;
 
-        static vector<PorteAnimal*> todosPortes;
-    
-    public:
-        PorteAnimal(int id = 0, string tipo = "") : IdPorte(id), Tipo(tipo) {
-            todosPortes.push_back(this);
+public:
+    PorteAnimal(int id = 0, const string& tipo = "")
+        : IdPorte(id), Tipo(tipo) {
+        todosPortes.push_back(this);
     }
-        ~PorteAnimal();
-        
-        // gettters e setters
-        int getId(){
-            return IdPorte;
-        }
-        void setId(int id){
-            IdPorte = id;
-        }
+    ~PorteAnimal() {}
 
-        string getTipo(){
-            return Tipo;
-        }
-        void setTipo(string tipo){
-            Tipo = tipo;
-        }
-        // ----------------------------
-        static void listarTodos() {
+    // Getters
+    int getId() const {
+        return IdPorte;
+    }
+
+    void setId(int id) {
+        IdPorte = id;
+    }
+
+    string getTipo() const {
+        return Tipo;
+    }
+
+    void setTipo(const string& tipo) {
+        Tipo = tipo;
+    }
+
+    static void listarTodos() {
         cout << "\n=== PORTES ===" << endl;
-            for (const auto& porte : todosPortes) {
-                cout << "ID: " << porte->getId() << endl;
-                cout << "Tipo: " << porte->getTipo() << endl;
-                cout << "-----------------------------" << endl;
-            }
+        for (const auto& porte : todosPortes) {
+            cout << "ID: " << porte->getId() << endl;
+            cout << "Tipo: " << porte->getTipo() << endl;
+            cout << "-----------------------------" << endl;
         }
-        // 
+    }
 };
 
 vector<PorteAnimal*> PorteAnimal::todosPortes;
